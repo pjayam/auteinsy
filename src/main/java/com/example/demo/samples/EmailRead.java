@@ -1,6 +1,7 @@
 package com.example.demo.samples;
 
 import java.util.Properties;
+
 import javax.mail.Folder;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -9,17 +10,15 @@ import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Store;
 
+import com.example.demo.utils.Constants;
+
 public class EmailRead {
 
     private static final String MAIL_POP_HOST = "pop.gmail.com";
     private static final String MAIL_STORE_TYPE = "pop3";
-    private static final String POP_USER = "pavanjayam87@gmail.com";
-    private static final String POP_PASSWORD = "India@7887";
     private static final String POP_PORT = "995";
 
     public static void getMails(String user, String password) {
-        user = "pavanjayam87@gmail.com";
-        password = "India@7887";
         try {
             // create properties field
             Properties properties = new Properties();
@@ -30,7 +29,7 @@ public class EmailRead {
             // Session emailSession = Session.getDefaultInstance(properties);
             Session emailSession = Session.getInstance(properties, new javax.mail.Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(POP_USER, POP_PASSWORD);
+                    return new PasswordAuthentication(Constants.POP_USER, Constants.POP_PASSWORD);
                 }
             });
             // create the POP3 store object and connect with the pop server
@@ -72,6 +71,6 @@ public class EmailRead {
     }
 
     public static void main(String[] args) {
-        getMails(POP_USER, POP_PASSWORD);
+        getMails(Constants.POP_USER, Constants.POP_PASSWORD);
     }
 }

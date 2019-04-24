@@ -7,4 +7,6 @@ public interface InterviewService {
 	public InterviewInfo findById(long id);
 
 	public InterviewInfo update(InterviewInfo int_info);
+	
+	public Boolean readMailAndSave();
 }

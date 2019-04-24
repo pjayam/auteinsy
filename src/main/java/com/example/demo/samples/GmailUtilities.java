@@ -3,6 +3,8 @@ package com.example.demo.samples;
 import javax.mail.*;
 import javax.mail.internet.*;
 
+import com.example.demo.utils.Constants;
+
 import java.util.Properties;
 
 
@@ -11,7 +13,6 @@ public class GmailUtilities {
     private static final String SMTP_HOST_NAME = "smtp.gmail.com";
     private static final int SMTP_HOST_PORT = 465;
     private static final String SMTP_AUTH_USER = "pavanjayam87@gmail.com";
-    private static final String SMTP_AUTH_PWD  = "India@7887";
 
     public static void main(String[] args) throws Exception{
        new GmailUtilities().test();
@@ -37,7 +38,7 @@ public class GmailUtilities {
              new InternetAddress("pavanjayam87@gmail.org"));
 
         transport.connect
-          (SMTP_HOST_NAME, SMTP_HOST_PORT, SMTP_AUTH_USER, SMTP_AUTH_PWD);
+          (SMTP_HOST_NAME, SMTP_HOST_PORT, SMTP_AUTH_USER, Constants.POP_PASSWORD);
 
         transport.sendMessage(message,
             message.getRecipients(Message.RecipientType.TO));

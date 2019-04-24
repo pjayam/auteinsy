@@ -24,8 +24,6 @@ public class Email implements ActionListener
 
 	public Email() throws MessagingException, IOException {
 		// EmailTable.Password.password = password;
-		password = "India@7887";
-		this.user = "pavanjayam87@gmail.com";
 		String host = "10.13.1.11";
 		Properties properties = System.getProperties();
 		Session session = Session.getDefaultInstance(properties);

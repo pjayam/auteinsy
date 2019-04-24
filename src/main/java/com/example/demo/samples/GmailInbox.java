@@ -8,6 +8,8 @@ import javax.mail.Folder;
 import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Store;
+
+import com.example.demo.utils.Constants;
  
 public class GmailInbox {
  
@@ -38,7 +40,7 @@ public class GmailInbox {
             Session session = Session.getDefaultInstance(props, null);
             System.out.println("----------------2--------------");
             Store store = session.getStore("imaps");
-            store.connect("smtp.gmail.com", "pavanjayam87@gmail.com", "India@7887");
+            store.connect("smtp.gmail.com", "pavanjayam87@gmail.com", Constants.POP_PASSWORD);
             System.out.println("----------------3--------------");
             Folder inbox = store.getFolder("inbox");
             inbox.open(Folder.READ_ONLY);

@@ -10,13 +10,12 @@ import javax.mail.Store;
 import javax.mail.event.MessageCountAdapter;
 import javax.mail.event.MessageCountEvent;
 
+import com.example.demo.utils.Constants;
 import com.sun.mail.imap.IMAPFolder;
 import com.sun.mail.imap.IMAPStore;
 
 public class GmailIncomingTest {
 
-    private static final String username = "pavanjayam87@gmail.com";
-    private static final String password = "India@7887";
 
     public static void main(String[] args) {
 
@@ -35,7 +34,7 @@ public class GmailIncomingTest {
         try {
         	System.out.println("Before store connect");
             store = (IMAPStore) session.getStore("imaps");
-            store.connect(username, password);
+            store.connect(Constants.POP_USER, Constants.POP_PASSWORD);
             System.out.println("after store connect");
             if (!store.hasCapability("IDLE")) {
                 throw new RuntimeException("IDLE not supported");
@@ -140,7 +139,7 @@ public class GmailIncomingTest {
         if (folder != null) {
             Store store = folder.getStore();
             if (store != null && !store.isConnected()) {
-                store.connect(username, password);
+                store.connect(Constants.POP_USER, Constants.POP_PASSWORD);
             }
         } else {
             throw new MessagingException("Unable to open a null folder");

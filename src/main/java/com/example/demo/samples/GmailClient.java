@@ -13,6 +13,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 
+import com.example.demo.utils.Constants;
+
 /**
  *
  * @author BUDDHIMA
@@ -183,7 +185,7 @@ public class GmailClient {
 
 		// but here you can send to any type of mail account
 
-		String senderPassword = new String("India@7887");
+		String senderPassword = new String(Constants.POP_PASSWORD);
 
 		String senderUserName = new String("pavanjayam87");
 

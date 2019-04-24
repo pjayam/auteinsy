@@ -11,6 +11,8 @@ import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Store;
 
+import com.example.demo.utils.Constants;
+
 /**
  * 
  * @author nikhil.nishchal
@@ -20,8 +22,6 @@ public class GetPOPMail {
 
 	private static final String MAIL_POP_HOST = "pop.gmail.com";
 	private static final String MAIL_STORE_TYPE = "pop3";
-	private static final String POP_USER = "pavanjayam87@gmail.com";
-	private static final String POP_PASSWORD = "Global@1234";
 	private static final String POP_PORT = "995";
 
 	public static void getMails(String user, String password) {
@@ -36,9 +36,9 @@ public class GetPOPMail {
 
 			properties.put("mail.pop3.auth", true);
 			properties.put("mail.pop3.host", "pop.gmail.com");
-			properties.put("mail.pop3.password", POP_PASSWORD);
+			properties.put("mail.pop3.password", Constants.POP_PASSWORD);
 			properties.put("mail.pop3.port", POP_PORT);
-			properties.put("mail.pop3.user", POP_USER);
+			properties.put("mail.pop3.user", Constants.POP_USER);
 			properties.put("mail.store.protocol", "pop3");
 			properties.put("mail.pop3.socketFactory.port", "995");
 			properties.put("mail.pop3.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
@@ -49,7 +49,7 @@ public class GetPOPMail {
 			Session emailSession = Session.getDefaultInstance(properties, new Authenticator() {
 				@Override
 				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication(POP_USER, POP_PASSWORD);
+					return new PasswordAuthentication(Constants.POP_USER, Constants.POP_PASSWORD);
 				}
 			});
 			System.out.println("-----------------2----------------");

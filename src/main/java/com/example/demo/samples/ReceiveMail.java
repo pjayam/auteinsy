@@ -11,6 +11,8 @@ import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Store;
 
+import com.example.demo.utils.Constants;
+
 public class ReceiveMail{  
   
  public static void receiveEmail(String pop3Host, String storeType,  
@@ -60,7 +62,7 @@ public class ReceiveMail{
   String host = "pop.gmail.com";//change accordingly  
   String mailStoreType = "pop3";  
   final String username= "pavanjayam87@gmail.com";  
-  final String password= "India@7887";//change accordingly  
+  final String password= Constants.POP_PASSWORD;//change accordingly  
   System.out.println("Hello Welcome");
   receiveEmail(host, mailStoreType, username, password);  
   

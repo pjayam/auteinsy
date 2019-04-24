@@ -9,6 +9,8 @@ import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.Store;
 
+import com.example.demo.utils.Constants;
+
 public class CheckMails {
 
 	   public static void check(String host, String storeType, String user,
@@ -60,13 +62,7 @@ public class CheckMails {
 	   public static void main(String[] args) {
 	      String host = "pop.gmail.com";// change accordingly
 	      String mailStoreType = "pop3";
-	      String username = "myemai@gmail.com";// change accordingly
-	      String password = "*******";// change accordingly
-	      
-	      final String POP_USER = "pavanjayam87@gmail.com";
-	      final String POP_PASSWORD = "India@7887";
-
-	      check(host, mailStoreType, POP_USER, POP_PASSWORD);
+	      check(host, mailStoreType, Constants.POP_USER, Constants.POP_PASSWORD);
 
 	   }
 

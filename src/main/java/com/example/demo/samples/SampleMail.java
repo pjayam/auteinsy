@@ -12,10 +12,12 @@ import javax.mail.Store;
 import javax.mail.URLName;
 import javax.mail.internet.MimeUtility;
 
+import com.example.demo.utils.Constants;
+
 public class SampleMail {
 
 	private static final String username = "pavanjayam87@gmail.com";
-	private static final String password = "India@7887";
+	private static final String password = Constants.POP_PASSWORD;
 
 	// public static void main(String[] args) {
 	// Properties props = System.getProperties();
@@ -23,7 +25,7 @@ public class SampleMail {
 	// try {
 	// Session session = Session.getDefaultInstance(props, null);
 	// Store store = session.getStore("imaps");
-	// store.connect("imap.gmail.com", "pavanjayam87@gmail.com", "India@7887");
+	// store.connect("imap.gmail.com", "pavanjayam87@gmail.com", "");
 	// Folder inbox = store.getFolder("inbox");
 	// inbox.open(Folder.READ_ONLY);
 	// int messageCount = inbox.getMessageCount();
@@ -41,7 +43,7 @@ public class SampleMail {
 	//
 	// String host = "imap.gmail.com";
 	// String username = "pavanjayam87@gmail.com";
-	// String password = "India@7887";
+	// String password = "";
 	// Properties props = new Properties();
 	// props.setProperty("mail.imap.ssl.enable", "true");
 	// // set any other needed mail.imap.* properties here
